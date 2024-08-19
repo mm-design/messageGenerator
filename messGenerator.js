@@ -5,9 +5,14 @@ const messagesStore = [
     '"When you give joy to other people, you get more joy in return. You should give a good thought to the happiness that you can give out.” —Eleanor Roosevelt'
 ];
 
-const generateMessage = () => {
+const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const d = new Date();
+let day = weekday[d.getDay()];
+
+const generateMessage = (name, numOfAdvices) => {
     const randomNum = Math.floor(Math.random() * messagesStore.length);
-    return messagesStore[randomNum];
+    return `Hello ${name}, I am your inspirational counselor, how are you today? My piece of advice for this amazing ${day} is: ${messagesStore[randomNum]}`;
 }
 
-console.log(generateMessage());
+console.log(generateMessage("Mauro", 4));
